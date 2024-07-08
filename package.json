@@ -1,0 +1,18 @@
+{
+  "name": "react-map-repository",
+  "description": "React Map Repository",
+  "author": "Truong Thanh Tung <ttungbmt@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtelots/react-map.git"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+
+  },
+  "devDependencies": {
+
+  }
+}

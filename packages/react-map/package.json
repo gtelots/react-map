@@ -1,0 +1,62 @@
+{
+  "name": "@gtelots/react-map",
+  "version": "0.0.1",
+  "description": "React components for Leaflet maps",
+  "author": "Truong Thanh Tung <ttungbmt@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtelots/redux-toolkit.git"
+  },
+  "keywords": [
+    "react",
+    "map",
+    "react-map"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "default": "./dist/"
+    }
+  },
+  "devDependencies": {
+    "@tsconfig/vite-react": "^3.0.2",
+    "@types/geojson": "^7946.0.14",
+    "@types/leaflet": "^1.9.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "esbuild-sass-plugin": "^3.3.1",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "size": "size-limit"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "peerDependencies": {
+    "leaflet": "^1.9.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@react-leaflet/core": "^2.1.0",
+    "react-leaflet": "^4.2.1"
+  }
+}
