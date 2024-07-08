@@ -1,32 +1,35 @@
+import { MapContainer, TileLayer } from '@gtelots/react-map'
+import { Map } from 'leaflet'
 import './App.scss'
-import { MapContainer, Marker, Popup, TileLayer } from '@gtelots/react-map'
-import 'leaflet/dist/leaflet.css'
+
 import '@gtelots/react-map/dist/index.css'
+import 'leaflet/dist/leaflet.css'
+
+import '@ttungbmt/leaflet-geoman-free'
+import '@ttungbmt/leaflet-geoman-free/dist/leaflet-geoman.css'
 
 function App() {
-  const position = [51.505, -0.09] as any
   const mapOptions = {
-    center: [10.7578001, 106.6309967] as any,
-    zoom: 8,
+    center: [10.7578001, 106.6309967],
+    zoom: 10,
     style: {
       width: '100%',
-      height: '100%'
-    }
-  }
+      height: '100%',
+    },
+    whenReady: ({ target: map }: { target: Map }) => {
+      map.pm.addControls({
+        position: 'topright',
+      })
+      map.pm.setLang('vi')
+    },
+  } as any
 
   return (
-    <MapContainer
-      {...mapOptions}
-    >
+    <MapContainer {...mapOptions}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={position}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
     </MapContainer>
   )
 }
